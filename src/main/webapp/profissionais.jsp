@@ -9,6 +9,20 @@
     String alertaMensagem = null;
     String alertaTipo = null;
     List<Profissional> registros = controller.getAll();
+
+    String paramExcluir = request.getParameter("excluir");
+    if (paramExcluir != null && !paramExcluir.isEmpty()) {
+        Long id = Long.parseLong(paramExcluir); 
+        int status = controller.delete(id);
+
+        if (status > 0) {
+            alertaMensagem = "Profissional excluído com sucesso!";
+            alertaTipo = "sucesso";
+        } else {
+            alertaMensagem = "Erro ao excluir o Profissional!";
+            alertaTipo = "erro";
+        }
+    }
 %>
 
     <%@ include file="include/head.jsp" %>

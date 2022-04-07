@@ -118,7 +118,7 @@ public class ProfissionalDao implements IDao<Profissional> {
     @Override
     public int delete(Long id) throws SQLException {
         int registrosAfetados = 0;
-        String sql = "DELETE profissional WHERE id = ?";
+        String sql = "DELETE FROM profissional WHERE id = ?";
 
         ps = conexao.prepareStatement(sql);
         ps.setLong(1, id);
