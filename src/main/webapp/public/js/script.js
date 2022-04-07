@@ -101,3 +101,13 @@ if (botaoCarregar) {
         // xhr.send();
     })
 }
+
+const buttonsRedirect = document.querySelectorAll('[data-redirect]');
+
+function redirectPage(event) {
+    window.location.href = event.target.getAttribute('data-redirect');
+}
+
+buttonsRedirect.forEach(button => {
+    button.addEventListener('click', redirectPage);
+})

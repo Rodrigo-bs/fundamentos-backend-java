@@ -1,13 +1,21 @@
 <%@ page pageEncoding="UTF-8" %>
+
+<%
+    String alertaMensagem = null;
+    String alertaTipo = null;
+%>
+
     <%@ include file="include/head.jsp" %>
         <%@ include file="include/header.jsp" %>
             <%@ include file="include/navmenu.jsp" %>
 
             <main>
-                <jsp:include page="include/alerta.jsp">
-                    <jsp:param name="alertaMensagem" value="<%=alertaMensagem%>" />
-                    <jsp:param name="alertaTipo" value="<%=alertaTipo%>" />
-                </jsp:include>
+                <% if (alertaMensagem != null) { %>
+                    <jsp:include page="include/alerta.jsp">
+                        <jsp:param name="alertaMensagem" value="<%=alertaMensagem%>" />
+                        <jsp:param name="alertaTipo" value="<%=alertaTipo%>" />
+                    </jsp:include>
+                <% } %>
 
                 <form action="#" method="post">
                     <div class="grid">
@@ -35,7 +43,7 @@
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email">
                     </div>
-                    <input type="button" value="Cancelar">
+                    <input type="button" value="Cancelar" data-redirect="profissionais.jsp">
                     <input type="submit" value="Salvar" disabled>
                 </form>
 

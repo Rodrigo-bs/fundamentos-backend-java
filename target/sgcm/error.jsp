@@ -1,4 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ page isErrorPage="true" %>
     <%@ include file="include/head.jsp" %>
         <%@ include file="include/header.jsp" %>
             <%@ include file="include/navmenu.jsp" %>
