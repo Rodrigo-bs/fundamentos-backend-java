@@ -1,5 +1,6 @@
 package br.ufac.sgcm.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.ufac.sgcm.dao.ProfissionalDao;
@@ -14,12 +15,12 @@ public class ProfissionalController implements IController<Profissional> {
     }
 
     @Override
-    public List<Profissional> getAll() {
+    public List<Profissional> getAll() throws SQLException {
         return dao.getAll();
     }
 
     @Override
-    public Profissional getById(Long id) {
+    public Profissional getById(Long id) throws SQLException {
         return dao.getById(id);
     }
 
@@ -29,7 +30,7 @@ public class ProfissionalController implements IController<Profissional> {
     }
 
     @Override
-    public int save(Profissional objeto) {
+    public int save(Profissional objeto) throws SQLException {
         int registrosAfetados = 0;
 
         if (objeto.getId() == null) {
@@ -42,7 +43,7 @@ public class ProfissionalController implements IController<Profissional> {
     }
 
     @Override
-    public int delete(Long id) {
+    public int delete(Long id) throws SQLException {
         return dao.delete(id);
     }
     
