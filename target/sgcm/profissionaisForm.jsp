@@ -1,14 +1,4 @@
 <%@ page pageEncoding="UTF-8" %>
-
-<%@ page import="java.util.List" %>
-<%@ page import="br.ufac.sgcm.model.Profissional" %>
-
-<jsp:useBean id="controller" class="br.ufac.sgcm.controller.ProfissionalController" scope="page" />
-
-<%
-    List<Profissional> registros = controller.getAll();
-%>
-
     <%@ include file="include/head.jsp" %>
         <%@ include file="include/header.jsp" %>
             <%@ include file="include/navmenu.jsp" %>
@@ -50,42 +40,5 @@
                 </form>
 
                 <%@ include file="include/comandos.jsp" %>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Registro</th>
-                            <th>Especialidade</th>
-                            <th>Unidade</th>
-                            <th>Telefone</th>
-                            <th>E-mail</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (Profissional item: registro) { %>
-                            <tr>
-                                <td class="fit"><%=item.getId()%></td>
-                                <td><%=item.getNome()%></td>
-                                <td><%=item.getRegistroConselho()%></td>
-                                <td><%=item.getEspecialidade().getNome()%></td>
-                                <td><%=item.getUnidade().getNome()%></td>
-                                <td><%=item.getTelefone()%></td>
-                                <td><%=item.getEmail()%></td>
-                                <td>
-                                    <a href="profissionaisForm.jsp?id=<%=item.getId()%>" class="botao">Editar</a>
-                                    <a href="profissionais.jsp?excluir=<%=item.getId()%>" class="botao excluir">Excluir</a>
-                                </td>
-                            </tr>
-                        <% } %>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="8">Total de registros: <%=registros.size()%></td>
-                        </tr>
-                    </tfoot>
-                </table>
             </main>
 <%@ include file="include/footer.jsp" %>
