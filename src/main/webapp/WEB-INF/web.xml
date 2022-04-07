@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+        https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+        version="5.0">
+  <display-name>Primeiro Servlet</display-name>
+  <description>Essa é a minha descrição.</description>
+  <servlet>
+    <servlet-name>PrimeiroServlet</servlet-name>
+    <servlet-class>br.ufac.sgcm.PrimeiroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrimeiroServlet</servlet-name>
+    <url-pattern>/primeiroservlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ExibeDados</servlet-name>
+    <servlet-class>br.ufac.sgcm.ExibeDados</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExibeDados</servlet-name>
+    <url-pattern>/exibeDados</url-pattern>
+  </servlet-mapping>
+</web-app>
